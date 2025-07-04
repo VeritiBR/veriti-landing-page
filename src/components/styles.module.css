@@ -1,0 +1,4 @@
+.banner {
+  object-position: -50%, -50% !important;
+  object-position: right center; /* ou: 100% center */
+}
