@@ -105,3 +105,33 @@ html {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+@layer utilities {
+  .hero-banner-desktop {
+    object-position: 50% 50%;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-banner-tablet {
+      object-position: 45% 50% !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-banner-mobile {
+      object-position: 40% 50% !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-banner-small {
+      object-position: 35% 50% !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-banner-xs {
+      object-position: 80% 50% !important;
+    }
+  }
+}

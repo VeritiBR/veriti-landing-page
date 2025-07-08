@@ -100,7 +100,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-teal-400" />
-                <span className="text-gray-400">adm@veriti.srv.br</span>
+                <span className="text-gray-400">contato@veriti.srv.br</span>
               </div>
               <div className="text-gray-400">
                 Av. Wladimir Meirelles Ferreira, 1660

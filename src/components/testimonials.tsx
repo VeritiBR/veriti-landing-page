@@ -21,6 +21,8 @@ interface Testimonial {
 import Img1 from "../../public/images/sinara.jpg"
 import Img2 from "../../public/images/caio.jpg"
 import Img3 from "../../public/images/juliano.jpg"
+import Img4 from "../../public/images/carlos.jpg"
+
 import Link from "next/link"
 
 const testimonials: Testimonial[] = [
@@ -62,6 +64,17 @@ const testimonials: Testimonial[] = [
     location: "Sinop, MT",
     businessType: "Cooperativa agropecuária",
   },
+  {
+    id: 4,
+    name: "Carlos Trinca",
+    role: "Proprietário",
+    company: "",
+    content: "Fiquei muito motivado a contratar os serviços da Veriti quando conheci os proprietários da empresa, pois, além de serem profissionais com muito conhecimento e competência, nos prestam atendimento de forma singular, com sistemas automatizados modernos que proporcionam agilidade nos contatos e nos envios de documentos. São ágeis em providenciar nossas demandas. Nossa empresa, sem dúvidas, está muito bem assistida pela Veriti!",
+    rating: 5,
+    avatar: Img4,
+    location: "Ribeirão Preto, SP",
+    businessType: "Corretora de seguros",
+  }
 ]
 
 function TestimonialCard({

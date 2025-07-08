@@ -161,7 +161,7 @@ export function Plans() {
   }
 
   return (
-    <section id="plans" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="plans" className="py-28 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Planos e Soluções</h2>

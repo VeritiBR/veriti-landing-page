@@ -1,9 +1,56 @@
 /* [project]/src/components/styles.module.css [app-client] (css) */
-.styles-module__J5OcPW__banner {
-  -o-object-position: right center;
-  object-position: right center;
-  -o-object-position: -50%, -50% !important;
-  object-position: -50%, -50% !important;
+.styles-module__J5OcPW__heroBanner {
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+}
+
+.styles-module__J5OcPW__desktopImage {
+  display: block;
+}
+
+.styles-module__J5OcPW__mobileImage, .styles-module__J5OcPW__smallImage {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .styles-module__J5OcPW__heroBanner {
+    -o-object-position: 40% 50%;
+    object-position: 40% 50%;
+  }
+}
+
+@media (width <= 640px) {
+  .styles-module__J5OcPW__heroBanner {
+    -o-object-position: 35% 50%;
+    object-position: 35% 50%;
+  }
+}
+
+@media (width <= 480px) {
+  .styles-module__J5OcPW__heroBanner {
+    -o-object-position: 30% 50%;
+    object-position: 30% 50%;
+  }
+
+  .styles-module__J5OcPW__mobileImage img {
+    display: none;
+    -o-object-position: center center !important;
+    object-position: center center !important;
+  }
+
+  .styles-module__J5OcPW__smallImage {
+    display: block;
+  }
+}
+
+@media (width <= 800px) {
+  .styles-module__J5OcPW__desktopImage {
+    display: none;
+  }
+
+  .styles-module__J5OcPW__mobileImage {
+    display: block;
+  }
 }
 
 

@@ -1,4 +1,58 @@
-.banner {
-  object-position: -50%, -50% !important;
-  object-position: right center; /* ou: 100% center */
+.heroBanner {
+  object-position: 50% 50%; /* Desktop - centralizado */
+}
+
+.desktopImage {
+  display: block;
+}
+
+.mobileImage {
+  display: none;
+}
+
+.smallImage {
+  display: none;
+}
+
+/* Tablet landscape */
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .heroBanner {
+    object-position: 40% 50%; /* Mostra mais da pessoa da esquerda */
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 640px) {
+  .heroBanner {
+    object-position: 35% 50%; /* Ajuste para mobile landscape */
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .heroBanner {
+    object-position: 30% 50%; /* Mobile portrait */
+  }
+
+  .mobileImage img {
+    object-position: center center !important;
+    display: none;
+  }
+
+  .smallImage {
+    display: block;
+  }
+}
+
+/* Troca as imagens em telas menores que 800px */
+@media (max-width: 800px) {
+  .desktopImage {
+    display: none;
+  }
+
+  .mobileImage {
+    display: block;
+  }
 }

@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-28 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Entre em Contato</h2>
@@ -76,7 +76,6 @@ export function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Endereço</h3>
                       <p className="text-gray-600">
-                        Av Vladimir Pereira Meireles
                         Av. Wladimir Meirelles Ferreira, 1660
                         <br />
                         Jardim Botânico, Ribeirão Preto - SP
@@ -116,7 +115,7 @@ export function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                       <p className="text-gray-600">
-                        adm@veriti.srv.br
+                        contato@veriti.srv.br
                       </p>
                     </div>
                   </div>

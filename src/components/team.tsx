@@ -12,6 +12,7 @@ interface TeamMember {
   linkedin?: string
   avatar: StaticImageData
   color: string
+  role: string
 }
 
 import Img1 from "../../public/images/FOTO_BLENA.jpg"
@@ -19,16 +20,20 @@ import Img2 from "../../public/images/FOTO_DANIELA.jpg"
 import Img3 from "../../public/images/FOTO_MAUR.jpg"
 import Img4 from "../../public/images/FOTO_TATI.jpg"
 import Img5 from "../../public/images/img2.jpg"
+import Img6 from "../../public/images/fernando.jpg"
+import Img7 from "../../public/images/marlon.jpg"
+
 import Link from "next/link"
 
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Blena de Farias de Lima",
+    name: "Blena Lima",
     email: "blena.lima@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/blenna/",
     avatar: Img1,
     color: "from-teal-400 to-blue-500",
+    role: "Analista Fiscal"
   },
   {
     id: 2,
@@ -37,6 +42,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/maur-paiva-2b25771b4/",
     avatar: Img3,
     color: "from-green-400 to-teal-500",
+    role: "Analista Contábil"
   },
   {
     id: 3,
@@ -44,6 +50,7 @@ const teamMembers: TeamMember[] = [
     email: "Tatiane.barboza@veriti.srv.br",
     avatar: Img4,
     color: "from-orange-400 to-red-500",
+    role: "Coordenadora Administrativa"
   },
   {
     id: 4,
@@ -51,24 +58,29 @@ const teamMembers: TeamMember[] = [
     email: "daniela.siqueira@veriti.srv.br",
     linkedin:
       "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
-    avatar: Img4,
+    avatar: Img2,
     color: "from-orange-400 to-red-500",
+    role: "Especialista Fiscal"
   },
   {
     id: 5,
     name: "Fernando Donegá",
     email: "fernando@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/fhmdonega/",
-    avatar: Img2,
+    avatar: Img6,
     color: "from-purple-400 to-pink-500",
+    role: "Partner | TAX"
   },
+
+  // Fotos e cargos
   {
     id: 6,
     name: "Marlon Barboza",
     email: "marlon@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/marlon-barboza-997702112/",
-    avatar: Img5,
+    avatar: Img7,
     color: "from-purple-400 to-pink-500",
+    role: "Partner"
   },
 ]
 
@@ -106,16 +118,13 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
 
         {/* Avatar with Floating Animation */}
         <div className="relative mb-6 flex justify-center">
-          <div
-            className={`relative w-24 h-24 rounded-full overflow-hidden border-4 border-white/20 transition-all duration-500 ${isHovered ? "scale-110 border-teal-400/50" : ""
-              }`}
-          >
+          <div className={`relative w-[100px] h-[100px] rounded-full overflow-hidden border-4 border-white/20 transition-all duration-500 ${isHovered ? "scale-110 border-teal-400/50" : ""}`}>
             <Image
               src={member.avatar || "/placeholder.svg"}
               alt={member.name}
-              width={96}
-              height={96}
-              className="w-full h-full object-cover"
+              fill
+              className="top-0 left-0 w-full h-full object-top rounded-full"
+              priority
             />
             {/* Animated Ring */}
             <div
@@ -137,6 +146,9 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
         <div className="text-center space-y-4">
           <h3 className="text-[20px] font-bold text-white group-hover:text-teal-400 transition-colors duration-300">
             {member.name}
+          </h3>
+          <h3 className="text-[20px] font-bold text-teal-400 group-hover:text-white transition-colors duration-300">
+            {member.role}
           </h3>
 
           {/* Expandable Description - Now triggered by hover */}
@@ -292,13 +304,6 @@ export function Team() {
 
         {/* Team Grid - Custom Layout */}
         <div className="max-w-7xl mx-auto space-y-8">
-          {/* Primeira linha - 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {firstRowMembers.map((member, index) => (
-              <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
-            ))}
-          </div>
-
           {/* Segunda linha - 2 cards centralizados */}
           {secondRowMembers.length > 0 && (
             <div className="flex justify-center">
@@ -309,6 +314,14 @@ export function Team() {
               </div>
             </div>
           )}
+          {/* Primeira linha - 4 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {firstRowMembers.map((member, index) => (
+              <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
+            ))}
+          </div>
+
+
         </div>
 
         {/* Interactive Call to Action */}
