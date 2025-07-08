@@ -9,36 +9,43 @@ export function Header() {
     <header className="fixed top-0 w-full bg-white backdrop-blur-sm border-b border-gray-200 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className=" flex items-center relative w-[350px] h-[70px]">
-            <Image
-              src={Logo}
-              alt="VERITI - Contabilidade e Gestão Tributária"
-              width={170}
-              height={70}
-              className=""
-            />
-          </Link>
+          {/* Logo Section - Left */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center">
+              <Image
+                src={Logo}
+                alt="VERITI - Contabilidade e Gestão Tributária"
+                width={170}
+                height={70}
+                className="h-auto"
+              />
+            </Link>
+          </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-700 hover:text-teal-600 transition-colors">
-              Quem Somos
-            </Link>
-            <Link href="#services" className="text-gray-700 hover:text-teal-600 transition-colors">
-              Serviços
-            </Link>
-            <Link href="#plans" className="text-gray-700 hover:text-teal-600 transition-colors">
-              Planos
-            </Link>
-            <Link href="#faq" className="text-gray-700 hover:text-teal-600 transition-colors">
-              FAQ
-            </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors">
-              Contato
-            </Link>
+          {/* Navigation - Center */}
+          <nav className="hidden md:flex items-center justify-center flex-1 mx-8">
+            <div className="flex items-center space-x-8">
+              <Link href="#about" className="text-gray-700 hover:text-teal-600 transition-colors font-medium">
+                Quem Somos
+              </Link>
+              <Link href="#services" className="text-gray-700 hover:text-teal-600 transition-colors font-medium">
+                Serviços
+              </Link>
+              <Link href="#plans" className="text-gray-700 hover:text-teal-600 transition-colors font-medium">
+                Planos
+              </Link>
+              <Link href="#faq" className="text-gray-700 hover:text-teal-600 transition-colors font-medium">
+                FAQ
+              </Link>
+              <Link href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors font-medium">
+                Contato
+              </Link>
+            </div>
           </nav>
 
-          <div className="flex items-center space-x-4">
-            <Button asChild className="hidden md:inline-flex bg-teal-600 hover:bg-teal-700">
+          {/* Actions Section - Right */}
+          <div className="flex items-center space-x-4 flex-shrink-0">
+            <Button asChild className="hidden md:inline-flex bg-teal-600 hover:bg-teal-700 font-medium">
               <Link href="#contact">Entre em Contato</Link>
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">

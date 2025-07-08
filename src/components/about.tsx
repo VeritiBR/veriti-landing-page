@@ -40,13 +40,13 @@ export function About() {
             <div className="relative w-96 h-96">
               {/* Central Image */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="relative">
+                <div className="relative w-[150px] h-[150px] rounded-full bg-[#000721] border-[10px] border-[#CCFBF1] shadow-lg flex items-center justify-center">
                   <Image
                     src="/images/veriti-icon.png"
                     alt="Logo Veriti"
-                    width={300}
-                    height={300}
-                    className="w-[300px] h-[300px] rounded-full object-contain border-[10px] scale-90 bg-[#000721] border-teal-200 shadow-lg"
+                    width={100}
+                    height={100}
+                    className="w-[80px] h-[80px] object-contain"
                   />
                 </div>
               </div>

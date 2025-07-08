@@ -6,14 +6,25 @@ import styles from "./styles.module.css"
 
 export function Hero() {
   return (
-    <section className="relative h-[100vh] bg-[#10141D] overflow-hidden">
+    <section className="relative w-[100vw] h-[100vh] bg-[#10141D] overflow-hidden">
       <Image
-        src="/images/banner_2.jpg"
+        src="/images/banner_2.png"
         width={1920}
         height={1080}
         alt="Banner de fundo com imagem dos sócios da Veriti"
-        className={`absolute top-[100px] left-0 w-full h-full object-contain opacity-60 ${styles.banner}`}
+        className={`absolute top-0 left-0 w-full h-full object-cover opacity-60 ${styles.banner} teste`}
       />
+
+      {/* <style jsx>
+        {
+          `
+            .teste {
+              display: none;
+            }
+          `
+        }
+      </style> */}
+
       <div className="flex justify-start px-4 pt-[300px] relative z-10">
         <div className="max-w-4xl  text-center text-white ">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

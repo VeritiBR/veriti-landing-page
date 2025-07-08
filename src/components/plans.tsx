@@ -1,3 +1,4 @@
+import React from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -11,7 +12,7 @@ export function Plans() {
       icon: <FileText className="h-5 w-5" />,
       features: [
         {
-          name: "Escrituração contábil",
+          name: "Contabilidade completa",
           initium: true,
           gradus: true,
           virtus: true,
@@ -23,8 +24,8 @@ export function Plans() {
           virtus: "Acima de 10 colaboradores",
         },
         {
-          name: "Abertura de empresa",
-          initium: false,
+          name: "1ª emissão ou renovação de certificado digital gratuita",
+          initium: true,
           gradus: true,
           virtus: true,
         },
@@ -35,16 +36,16 @@ export function Plans() {
       icon: <Users className="h-5 w-5" />,
       features: [
         {
+          name: "Abertura de empresa",
+          initium: false,
+          gradus: true,
+          virtus: true,
+        },
+        {
           name: "Alteração societário por ano",
           initium: "Até 01 alteração",
           gradus: "Até 02 alterações",
           virtus: "Até 04 alterações",
-        },
-        {
-          name: "Apresentação de demonstrações financeiras",
-          initium: "Semestral",
-          gradus: "Trimestral",
-          virtus: "Mensal",
         },
       ],
     },
@@ -53,19 +54,7 @@ export function Plans() {
       icon: <Calculator className="h-5 w-5" />,
       features: [
         {
-          name: "Envio do balanço e DRE",
-          initium: "Mensal",
-          gradus: "Mensal",
-          virtus: "Mensal",
-        },
-        {
           name: "Acompanhamento de caixas postais fiscais",
-          initium: true,
-          gradus: true,
-          virtus: true,
-        },
-        {
-          name: "1ª emissão ou renovação de certificado digital gratuita",
           initium: true,
           gradus: true,
           virtus: true,
@@ -76,6 +65,12 @@ export function Plans() {
           gradus: true,
           virtus: true,
         },
+        {
+          name: "Revisão cadastral de produtos e operações",
+          initium: false,
+          gradus: false,
+          virtus: true,
+        },
       ],
     },
     {
@@ -83,10 +78,16 @@ export function Plans() {
       icon: <Shield className="h-5 w-5" />,
       features: [
         {
-          name: "Revisão cadastral de produtos e operações",
-          initium: false,
-          gradus: false,
-          virtus: true,
+          name: "Apresentação de demonstrações financeiras",
+          initium: "Semestral",
+          gradus: "Trimestral",
+          virtus: "Mensal",
+        },
+        {
+          name: "Envio do balanço e DRE",
+          initium: "Mensal",
+          gradus: "Mensal",
+          virtus: "Mensal",
         },
         {
           name: "Planejamento tributário",
@@ -185,13 +186,11 @@ export function Plans() {
                   </Badge>
                 </div>
               )}
-
               <CardHeader className="text-center pb-6">
                 <CardTitle className="text-3xl font-bold text-gray-900 mb-2">{plan.name}</CardTitle>
                 <CardDescription className="text-lg font-medium text-gray-600 mb-4">{plan.subtitle}</CardDescription>
                 <p className="text-gray-600 leading-relaxed">{plan.description}</p>
               </CardHeader>
-
               <CardContent className="pt-0">
                 <Button
                   asChild
@@ -210,7 +209,6 @@ export function Plans() {
             <div className="bg-gray-50 px-8 py-6 border-b">
               <h3 className="text-2xl font-bold text-gray-900 text-center">Comparação Detalhada dos Planos</h3>
             </div>
-
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -238,7 +236,7 @@ export function Plans() {
                 </thead>
                 <tbody>
                   {planFeatures.map((category, categoryIndex) => (
-                    <>
+                    <React.Fragment key={`category-group-${categoryIndex}`}>
                       <tr key={`category-${categoryIndex}`} className="bg-gray-100">
                         <td colSpan={4} className="py-3 px-6">
                           <div className="flex items-center font-semibold text-gray-800">
@@ -258,7 +256,7 @@ export function Plans() {
                           <td className="py-4 px-6 text-center">{renderFeatureValue(feature.virtus)}</td>
                         </tr>
                       ))}
-                    </>
+                    </React.Fragment>
                   ))}
                 </tbody>
               </table>

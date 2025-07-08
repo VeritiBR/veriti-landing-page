@@ -18,72 +18,49 @@ interface Testimonial {
   videoUrl?: string
 }
 
-import Img1 from "../../public/img1.jpg"
-import Img2 from "../../public/img2.jpeg"
-import Img3 from "../../public/img3.jpg"
-import Img4 from "../../public/img4.jpeg"
+import Img1 from "../../public/images/sinara.jpg"
+import Img2 from "../../public/images/caio.jpg"
+import Img3 from "../../public/images/juliano.jpg"
 import Link from "next/link"
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Maria Santos",
-    role: "CEO",
-    company: "TechFlow Solutions",
+    name: "Sinara",
+    role: "Contadora",
+    company: "Morro da Mesa",
     content:
-      "A VERITI transformou completamente nossa gestão financeira. Em apenas 6 meses, conseguimos reduzir 40% dos custos tributários e ter uma visão clara do nosso crescimento. A equipe é excepcional!",
+      "Com experiência e dedicação, nosso consultor fiscal atua lado a lado com nossa equipe, oferecendo soluções práticas e seguras para facilitar a rotina fiscal e evitar problemas com o fisco. Sempre atualizado, busca enxergar além das obrigações, ajudando a identificar oportunidades e trazer mais eficiência para o dia a dia trazendo tranquilidade para a gestão fiscal.",
     rating: 5,
     avatar: Img1,
-    location: "São Paulo, SP",
-    businessType: "Tecnologia",
+    location: "Primavera do Leste, MT",
+    businessType: "Concessão de rodovia",
   },
   {
     id: 2,
-    name: "João Oliveira",
+    name: "Caio Rezende",
     role: "Diretor Financeiro",
-    company: "Construtora Horizonte",
-    content:
-      "Trabalhar com a VERITI foi a melhor decisão que tomamos. Eles não são apenas contadores, são verdadeiros parceiros estratégicos. Nossa empresa cresceu 60% no último ano!",
+    company: "Sojal",
+    content: "Tivemos a satisfação de contar com o suporte técnico da equipe da VERITI em assuntos contábeis e tributários que demandavam elevado grau de complexidade e celeridade na execução. Desde o primeiro contato, a equipe demonstrou comprometimento, profundo conhecimento técnico e proatividade na busca de soluções alinhadas às melhores práticas de mercado. O atendimento foi conduzido com alto padrão de profissionalismo, cordialidade e transparência, proporcionando segurança e confiabilidade em cada etapa do trabalho. A expertise apresentada pela VERITI permitiu que a Sojal obtivesse não apenas conformidade fiscal e contábil, mas também identificasse oportunidades relevantes de otimização tributária e aprimoramento de seus controles internos. Recomendamos, com total confiança, os serviços da VERITI a qualquer organização que busque excelência em assessoria contábil e tributária.",
     rating: 5,
     avatar: Img2,
-    location: "Rio de Janeiro, RJ",
-    businessType: "Construção Civil",
+    location: "Paragominas, PA",
+    businessType: "Revenda de Insumos Agrícolas",
   },
   {
     id: 3,
-    name: "Ana Carolina",
-    role: "Fundadora",
-    company: "Boutique Elegance",
-    content:
-      "Como empreendedora, sempre tive dificuldades com a parte fiscal. A VERITI me deu a tranquilidade que eu precisava para focar no que amo fazer. Atendimento humanizado e resultados incríveis!",
+    name: "Juliano Santos de Oliveira",
+    role: "Coordenador de Controladoria",
+    company: "Coanorte  ",
+    content: `A COANORTE  tem contado com o suporte técnico e especializado da VERITI Contabilidade e Gestão Tributária na condução de importantes frentes relacionadas à nossa área fiscal e tributária.
+      Atualmente, a VERITI é responsável pelo levantamento de créditos tributários, promovendo uma análise minuciosa de oportunidades de recuperação de tributos, restituições de valores pagos indevidamente ou a maior, com total respaldo legal e recebimento em conta correte a título de restituição garantidos, outros casos ainda de compensação de créditos com débitos de tributos. Além disso, a empresa tem atuado com excelência na revisão de obrigações acessórias, garantindo a conformidade das informações prestadas ao fisco, reduzindo riscos de autuações e promovendo maior segurança contábil.
+      Outro ponto de destaque é o trabalho de estruturação e planejamento fiscal, que vem proporcionando à COANORTE uma visão estratégica mais clara, contribuindo para a otimização da carga tributária e o fortalecimento da governança corporativa.
+      A atuação da VERITI tem sido pautada pela transparência, ética profissional e profundo conhecimento técnico, sendo um parceiro essencial no aprimoramento de nossos processos internos. O compromisso deles com o compliance fiscal demonstra o alinhamento da empresa com as melhores práticas do mercado.
+      Recomendamos os serviços da VERITI a qualquer organização que busque uma gestão tributária eficiente, segura e alinhada à legislação vigente.`,
     rating: 5,
     avatar: Img3,
-    location: "Belo Horizonte, MG",
-    businessType: "Varejo",
-  },
-  {
-    id: 4,
-    name: "Roberto Silva",
-    role: "Sócio-Proprietário",
-    company: "Clínica Vida Saudável",
-    content:
-      "A expertise da VERITI na área da saúde é impressionante. Eles conhecem todas as particularidades do setor e nos ajudaram a otimizar nossa operação de forma surpreendente.",
-    rating: 5,
-    avatar: Img4,
-    location: "Curitiba, PR",
-    businessType: "Saúde",
-  },
-  {
-    id: 5,
-    name: "Carla Mendes",
-    role: "Diretora Comercial",
-    company: "Logística Express",
-    content:
-      "Em 15 anos de mercado, nunca tivemos um parceiro contábil tão dedicado. A VERITI entende nosso negócio e sempre está um passo à frente com soluções inovadoras.",
-    rating: 5,
-    avatar: Img1,
-    location: "Porto Alegre, RS",
-    businessType: "Logística",
+    location: "Sinop, MT",
+    businessType: "Cooperativa agropecuária",
   },
 ]
 
