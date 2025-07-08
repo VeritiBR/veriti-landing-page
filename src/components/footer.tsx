@@ -115,8 +115,13 @@ export function Footer() {
           <p className="text-gray-400 text-sm">
             © 2025 VERITI - Contabilidade e Gestão Tributária. Todos os direitos reservados.
           </p>
+          <p className="text-gray-400 text-sm mt-5">
+            Desenvolvido por <span className="hover:text-green-300 cursor-pointer">
+              <Link href="https://wa.me/5511976571580" target="_blank" rel="noopener noreferrer">              Filipe P. M.</Link>
+            </span>
+          </p>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }
