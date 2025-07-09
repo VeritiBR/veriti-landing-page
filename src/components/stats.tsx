@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react"
 import { DollarSign, Building, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { GiInjustice } from "react-icons/gi";
+import { IoMdPin } from "react-icons/io";
 
 interface StatCardProps {
   icon: React.ReactNode
@@ -76,7 +78,7 @@ function StatCard({ icon, value, label, prefix = "+", isVisible }: StatCardProps
   }
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       {/* Card positioned to span both white and dark sections */}
       <div className="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 shadow-2xl transform hover:scale-105 transition-all duration-300">
         {/* Icon circle - positioned to be in the white area */}
@@ -87,12 +89,12 @@ function StatCard({ icon, value, label, prefix = "+", isVisible }: StatCardProps
         </div>
 
         {/* Content - positioned in the dark area */}
-        <div className="pt-8">
-          <div className="text-[15px] md:text-4xl font-bold text-white mb-2">
+        <div className="pt-8 ">
+          <div className="text-[25px] font-bold text-white mb-2">
             {prefix}
             {formatValue(currentValue)}
           </div>
-          <div className="text-lg text-gray-300 font-medium">{label}</div>
+          <div className="text-[15px] text-gray-300 font-medium">{label}</div>
         </div>
       </div>
     </div>
@@ -135,12 +137,12 @@ export function Stats() {
       label: "Total de faturamento sob gestão",
     },
     {
-      icon: <Building className="h-8 w-8 text-white" />,
+      icon: <IoMdPin className="h-8 w-8 text-white" />,
       value: 9,
       label: "Estados atendidos",
     },
     {
-      icon: <Users className="h-8 w-8 text-white" />,
+      icon: <GiInjustice className="h-8 w-8 text-white" />,
       value: 7000000,
       label: "Tributos recuperados",
     },
@@ -149,7 +151,7 @@ export function Stats() {
   return (
     <div className="relative">
       {/* White section above */}
-      <div className="bg-white py-16"></div>
+      <div className="bg-white"></div>
 
       {/* Dark section below */}
       <div
@@ -162,7 +164,7 @@ export function Stats() {
           <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 py-24">
           {/* Stats Cards - positioned to overlap the boundary */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12 -mt-32">
             {stats.map((stat, index) => (

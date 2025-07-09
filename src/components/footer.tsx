@@ -20,10 +20,10 @@ export function Footer() {
               Transformando a gestão das empresas com soluções contábeis modernas e personalizadas.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://www.instagram.com/veriticontabilidade/" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <Link href="https://www.instagram.com/veriticontabilidade/" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="https://www.linkedin.com/company/veriti-contabilidade-e-gest%C3%A3o-tribut%C3%A1ria/?viewAsMember=true" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <Link href="https://www.linkedin.com/company/veriti-contabilidade-e-gest%C3%A3o-tribut%C3%A1ria/?viewAsMember=true" target="_blank" className="text-gray-400 hover:text-teal-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </div>
