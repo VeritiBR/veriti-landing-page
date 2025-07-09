@@ -631,6 +631,10 @@ body {
   z-index: 20;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -641,10 +645,6 @@ body {
 
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-40 {
-  z-index: 40;
 }
 
 .col-start-2 {
@@ -818,6 +818,10 @@ body {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mt-auto {
@@ -1980,6 +1984,10 @@ body {
   background-color: #0000004d;
 }
 
+.bg-black\/50 {
+  background-color: #00000080;
+}
+
 .bg-black\/60 {
   background-color: #0009;
 }
@@ -2146,6 +2154,10 @@ body {
 
 .bg-white\/5 {
   background-color: #ffffff0d;
+}
+
+.bg-white\/80 {
+  background-color: #fffc;
 }
 
 .bg-yellow-50 {
@@ -4471,6 +4483,18 @@ html {
 }
 
 @media (width >= 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:inline-flex {
+    display: inline-flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:h-full {
     height: 100%;
   }
