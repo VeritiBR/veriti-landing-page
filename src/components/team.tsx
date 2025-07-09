@@ -300,7 +300,7 @@ export function Team() {
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Primeira linha - Partners */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
               {partners.map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
               ))}
