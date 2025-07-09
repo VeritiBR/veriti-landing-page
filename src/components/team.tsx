@@ -115,7 +115,7 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
           <Image
             src={member.avatar}
             alt={member.name}
-            className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
+            className="w-full h-full  transition-all duration-500 group-hover:scale-110"
           />
         </div>
 
