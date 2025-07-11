@@ -1,6 +1,6 @@
 "use client"
 
-import { MapPin, Building, Camera, ArrowUpRight } from "lucide-react"
+import { MapPin, Building, ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
@@ -24,7 +24,7 @@ const officeImages = [
 
 const officeAddress = "Av. Wladimir Meirelles Ferreira, 1660 - Jardim Botânico, Ribeirão Preto - SP, 14021-630"
 const googleMapsEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8234567890123!2d-47.8063!3d-21.1775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bf0b0b0b0b0b%3A0x0b0b0b0b0b0b0b0b!2sAv.%20Wladimir%20Meirelles%20Ferreira%2C%201660%20-%20Jardim%20Bot%C3%A2nico%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014021-630!5e0!3m2!1spt-BR!2sbr!4v1678886580500!5m2!1spt-BR!2sbr"
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.847551225884!2d-47.8228308850638!3d-21.23788718588528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b9a6b0c6a5a9%3A0x8f7d8c5b0c9a4e3b!2sAv.%20Wladimir%20Meirelles%20Ferreira%2C%201660%20-%20Jardim%20Botanico%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014021-630!5e0!3m2!1spt-BR!2sbr!4v1628020968953!5m2!1spt-BR!2sbr"
 
 export function OfficeLocation() {
   const [isVisible, setIsVisible] = useState(false)
@@ -58,7 +58,7 @@ export function OfficeLocation() {
   }, [])
 
   return (
-    <section id="office" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="office" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <div
@@ -86,10 +86,10 @@ export function OfficeLocation() {
         </div>
 
         <div
-          className={`flex flex-col lg:flex-row gap-8 h-[80vh] max-h-[700px] w-full transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          className={`flex flex-col md:flex-row gap-8 md:h-[80vh] md:max-h-[700px] w-full transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
-          <div className="w-full lg:w-1/2 h-1/2 lg:h-full grid grid-cols-1 grid-rows-2 gap-4">
+          <div className="w-full md:w-1/2 h-[500px] md:h-full grid grid-cols-1 grid-rows-2 gap-4">
             {officeImages.map((image, index) => (
               <div
                 key={image.id}
@@ -100,20 +100,16 @@ export function OfficeLocation() {
                 onMouseLeave={() => setHoveredImage(null)}
               >
                 <Image
-                  src={image.src || "/placeholder.svg"}
+                  src={image.src}
                   alt={image.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                   className="object-cover transition-all duration-700 group-hover:scale-110"
                   priority={index === 0}
                 />
-
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
-
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-teal-400/50 rounded-2xl transition-all duration-500"></div>
-
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                     <h3 className="text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                       {image.title}
@@ -123,7 +119,6 @@ export function OfficeLocation() {
                     </p>
                   </div>
                 </div>
-
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
@@ -132,7 +127,7 @@ export function OfficeLocation() {
           </div>
 
           <div
-            className={`w-full lg:w-1/2 h-1/2 lg:h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transition-all duration-700 ease-out transform group  ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            className={`w-full md:w-1/2 h-[500px] md:h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transition-all duration-700 ease-out transform group ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               } hover:scale-[1.02] hover:shadow-3xl`}
             style={{ transitionDelay: "600ms" }}
           >
@@ -145,7 +140,6 @@ export function OfficeLocation() {
               </div>
               <div className="absolute bottom-0 left-0 h-1 bg-white/30 w-0 group-hover:w-full transition-all duration-500"></div>
             </div>
-
             <div className="relative h-full">
               <iframe
                 src={googleMapsEmbedUrl}
@@ -158,7 +152,6 @@ export function OfficeLocation() {
                 title="Localização do Escritório VERITI"
                 className="transition-all duration-500 group-hover:saturate-110 group-hover:contrast-110"
               ></iframe>
-
               <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           </div>
@@ -171,7 +164,7 @@ export function OfficeLocation() {
           <p className="text-lg text-gray-600 mb-4">
             Venha nos conhecer pessoalmente e descubra como podemos ajudar sua empresa
           </p>
-          <Link href="https://maps.app.goo.gl/WyUnXQSS5vmhKp1r5" target="_blank" className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors cursor-pointer group">
+          <Link href="https://maps.app.goo.gl/your-google-maps-link" target="_blank" className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors cursor-pointer group">
             <MapPin className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             <span>Ver no Google Maps</span>
             <ArrowUpRight className="h-4 w-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

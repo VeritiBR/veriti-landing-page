@@ -115,6 +115,13 @@ export function Footer() {
           <p className="text-gray-400 text-sm">
             © 2025 VERITI - Contabilidade e Gestão Tributária. Todos os direitos reservados.
           </p>
+          <Image
+            src="/images/logo_barbieratto.png"
+            alt="Logo da Barbieratto agência de marketing e design que gerência a VERITI"
+            width={150}
+            height={150}
+            className="mx-auto py-8"
+          />
           <p className="text-gray-400 text-sm mt-5">
             Desenvolvido por <span className="hover:text-green-300 cursor-pointer">
               <Link href="https://wa.me/5511976571580" target="_blank" rel="noopener noreferrer">              Filipe P. M.</Link>

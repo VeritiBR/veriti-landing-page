@@ -56,3 +56,60 @@
     display: block;
   }
 }
+
+.heroContainer {
+  /* --- Layout e Fundo Degradê --- */
+  position: relative; /* Essencial para posicionar elementos filhos */
+  display: flex; /* Usamos flexbox para alinhar o texto à esquerda */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  width: 100%;
+  min-height: 100vh; /* Garante que a seção ocupe a tela inteira */
+  overflow: hidden; /* Previne que a imagem vaze para fora da seção */
+
+  /* O DEGRADÊ REPLICADO: um radial que começa no canto superior esquerdo */
+  background: radial-gradient(circle at 25% 25%, #053836, #0a111a 70%);
+}
+
+.contentWrapper {
+  /* --- Posicionamento do Texto --- */
+  position: relative;
+  z-index: 10; /* Garante que o texto fique ACIMA da imagem dos sócios */
+  width: 50%; /* Ocupa a metade esquerda da tela no desktop */
+  padding-left: 5%; /* Um espaçamento para não colar na borda */
+  padding-right: 2rem;
+}
+
+.partnerImageContainer {
+  /* --- Posicionamento da Imagem dos Sócios --- */
+  position: absolute;
+  z-index: 5; /* Fica abaixo do texto, mas acima do fundo */
+  bottom: 0; /* Alinha na parte inferior */
+  right: 0; /* Alinha na parte direita */
+
+  /* Controle do tamanho da imagem no desktop */
+  width: 55%;
+  max-width: 900px; /* Um limite máximo para não ficar gigante em telas 4k */
+}
+
+/* --- Responsividade para Tablets e Celulares --- */
+@media (max-width: 1024px) {
+  .heroContainer {
+    display: block; /* Muda para o layout de bloco para empilhar os itens */
+    min-height: auto; /* Altura automática para se ajustar ao conteúdo */
+    padding: 120px 0 0 0; /* Espaçamento superior e remove o padding inferior */
+    text-align: center; /* Centraliza todo o texto no mobile */
+  }
+
+  .contentWrapper {
+    width: 100%; /* Ocupa a largura total */
+    padding: 0 1rem; /* Adiciona padding lateral */
+  }
+
+  .partnerImageContainer {
+    position: relative; /* Remove o posicionamento absoluto */
+    width: 90%; /* A imagem ocupa 90% da largura */
+    margin: 2rem auto 0 auto; /* Centraliza a imagem e adiciona espaço acima */
+    right: auto; /* Reseta o posicionamento */
+    bottom: auto; /* Reseta o posicionamento */
+  }
+}

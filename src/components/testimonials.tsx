@@ -351,7 +351,7 @@ export function Testimonials() {
             </p>
             <Button
               size="lg"
-              className="w-full sm:w-auto text-center whitespace-normal bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105"
+              className="w-full sm:w-auto text-center whitespace-normal bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-[12px] sm:text-lg transition-all duration-300 hover:scale-105"
             >
               <Link href="https://wa.me/5516999642390" target="_blank" rel="noopener noreferrer">
                 Quero Transformar Minha Empresa

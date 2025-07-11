@@ -78,9 +78,9 @@ function StatCard({ icon, value, label, prefix = "+", isVisible }: StatCardProps
   }
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 overflow-hidden">
       {/* Card positioned to span both white and dark sections */}
-      <div className="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 shadow-2xl transform hover:scale-105 transition-all duration-300">
+      <div className="bg-slate-800 rounded-2xl mt-10 p-8 text-center border border-slate-700 shadow-2xl transform hover:scale-105 transition-all duration-300">
         {/* Icon circle - positioned to be in the white area */}
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
           <div className="bg-slate-900 rounded-full w-16 h-16 flex items-center justify-center border-4 border-white shadow-lg">
@@ -89,8 +89,8 @@ function StatCard({ icon, value, label, prefix = "+", isVisible }: StatCardProps
         </div>
 
         {/* Content - positioned in the dark area */}
-        <div className="pt-8 ">
-          <div className="text-[25px] font-bold text-white mb-2">
+        <div className="pt-8">
+          <div className="text-[18px] md:text-[20px] lg:text-[22px] font-bold text-white mb-2">
             {prefix}
             {formatValue(currentValue)}
           </div>

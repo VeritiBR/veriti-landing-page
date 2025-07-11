@@ -178,8 +178,8 @@ export function Plans() {
               className={`relative ${plan.color} ${plan.popular ? "shadow-xl scale-105" : "shadow-lg"} transition-all duration-300 hover:shadow-xl`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-teal-600 text-white px-4 py-2 text-sm font-medium flex items-center">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                  <Badge className="bg-teal-600 text-white px-4 py-2 text-sm sm:text-[10px] font-medium flex items-center">
                     <Star className="h-4 w-4 mr-1 fill-current" />
                     Mais Popular
                   </Badge>
@@ -263,7 +263,7 @@ export function Plans() {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-lg text-gray-600 mb-6">Não tem certeza de qual plano escolher? Fale conosco!</p>
+          <p className="text-lg text-gray-600 mb-6">Não tem certeza de qual plano escolher? <br />Fale conosco!</p>
           <Button
             asChild
             size="lg"

@@ -26,6 +26,12 @@ export const metadata: Metadata = {
     "abertura de empresa",
     "BPO financeiro",
   ],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    minimumScale: 1,
+    maximumScale: 1, // Exemplo de outra propriedade
+  },
   authors: [{ name: "Filipe Pio Magalhães" }],
   other: {
     'copyright': '© 2025 VERITI Contabilidade e Gestão Tributária',

@@ -115,12 +115,12 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20">
+      <div className={member.id === 5 || member.id === 6 ? `relative h-80  max-[800px]:h-[550px]  max-[460px]:h-[350px] rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20` : `relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20`}>
         <div className="absolute inset-0">
           <Image
             src={member.avatar}
             alt={member.name}
-            className="w-full h-full  transition-all duration-500 group-hover:scale-110"
+            className={member.id === 5 || member.id === 6 ? `absolute top-0 left-0 w-full h-auto max-[1000px]:-top-16 max-[800px]:-top-18 max-[600px]:-top-20 max-[400px]:-top-14 object-top transition-all duration-500 group-hover:scale-110` : `absolute top-0 left-0 w-full h-auto object-top transition-all duration-500 group-hover:scale-110`}
           />
         </div>
 
@@ -287,7 +287,7 @@ export function Team() {
 
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[50%]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:max-w-[50%]">
               {partners.map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
               ))}
