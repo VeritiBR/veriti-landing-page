@@ -10,18 +10,10 @@ export function About() {
     <section id="about" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Content + Rotating Icons */}
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 flex items-center gap-4">
                 A
-                {/* <Image
-                  src="/images/5.png"
-                  alt="Ícone da Veriti"
-                  width={140}
-                  height={10}
-                  className="object-cover"
-                /> */}
                 <span className="text-[#0D9488] transform-it">VERITI</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -35,10 +27,8 @@ export function About() {
             </div>
           </div>
 
-          {/* Right side - Animated Circle */}
           <div className="flex justify-center items-center scale-75">
             <div className="relative w-96 h-96">
-              {/* Central Image */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="relative w-[150px] h-[150px] rounded-full bg-[#000721] border-[10px] border-[#CCFBF1] shadow-lg flex items-center justify-center">
                   <Image
@@ -51,58 +41,49 @@ export function About() {
                 </div>
               </div>
 
-              {/* Animated rotating circles */}
               <div className="absolute inset-0 animate-spin-slow">
-                {/* Circle 1 */}
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <PieChart className="h-8 w-8 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 2 */}
                 <div className="absolute top-1/4 right-0 transform translate-x-1/2 -translate-y-1/2">
                   <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <Calculator className="h-6 w-6 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 3 */}
                 <div className="absolute top-3/4 right-0 transform translate-x-1/2 translate-y-1/2">
                   <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <FileText className="h-5 w-5 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 4 */}
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
                   <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <Lightbulb className="h-8 w-8 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 5 */}
                 <div className="absolute top-3/4 left-0 transform -translate-x-1/2 translate-y-1/2">
                   <div className="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <TrendingUp className="h-6 w-6 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 6 */}
                 <div className="absolute top-1/4 left-0 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <Target className="h-5 w-5 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 7 */}
                 <div className="absolute top-1/2 right-1/4 transform translate-x-1/2 -translate-y-1/2">
                   <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <Award className="h-4 w-4 text-teal-600" />
                   </div>
                 </div>
 
-                {/* Circle 8 */}
                 <div className="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center border-2 border-teal-200">
                     <Users className="h-4 w-4 text-teal-600" />
@@ -110,7 +91,6 @@ export function About() {
                 </div>
               </div>
 
-              {/* Central connecting lines/path */}
               <div className="absolute inset-0 opacity-20">
                 <svg className="w-full h-full" viewBox="0 0 400 400">
                   <circle
@@ -129,7 +109,6 @@ export function About() {
           </div>
         </div>
 
-        {/* Bottom section with features */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           <div className="text-center">
             <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">

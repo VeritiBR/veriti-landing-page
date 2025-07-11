@@ -459,7 +459,7 @@ function Hero() {
                     width: 1920,
                     height: 1080,
                     alt: "Banner de fundo com imagem dos sócios da Veriti",
-                    className: "absolute top-0 left-0 w-full h-full object-fit opacity-60 aspect-[3/4]"
+                    className: "absolute top-0 left-0 w-full h-full object-fit opacity-70 aspect-[3/4]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero.tsx",
                     lineNumber: 14,
@@ -2335,7 +2335,7 @@ function Team() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex justify-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl",
+                                    className: "grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[50%]",
                                     children: partners.map((member, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TeamCard, {
                                             member: member,
                                             index: index,

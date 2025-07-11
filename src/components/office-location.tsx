@@ -85,12 +85,10 @@ export function OfficeLocation() {
           </div>
         </div>
 
-        {/* Main Content: Photos Mosaic and Map */}
         <div
           className={`flex flex-col lg:flex-row gap-8 h-[80vh] max-h-[700px] w-full transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
-          {/* Left Side: Photos Mosaic */}
           <div className="w-full lg:w-1/2 h-1/2 lg:h-full grid grid-cols-1 grid-rows-2 gap-4">
             {officeImages.map((image, index) => (
               <div
@@ -101,7 +99,6 @@ export function OfficeLocation() {
                 onMouseEnter={() => setHoveredImage(image.id)}
                 onMouseLeave={() => setHoveredImage(null)}
               >
-                {/* Background Image */}
                 <Image
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
@@ -111,16 +108,12 @@ export function OfficeLocation() {
                   priority={index === 0}
                 />
 
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
 
-                {/* Animated Border */}
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-teal-400/50 rounded-2xl transition-all duration-500"></div>
 
-                {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 
-                  {/* Text Content */}
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                     <h3 className="text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                       {image.title}
@@ -131,7 +124,6 @@ export function OfficeLocation() {
                   </div>
                 </div>
 
-                {/* Shine Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
@@ -139,13 +131,11 @@ export function OfficeLocation() {
             ))}
           </div>
 
-          {/* Right Side: Map */}
           <div
             className={`w-full lg:w-1/2 h-1/2 lg:h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transition-all duration-700 ease-out transform group  ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               } hover:scale-[1.02] hover:shadow-3xl`}
             style={{ transitionDelay: "600ms" }}
           >
-            {/* Map Header */}
             <div className="relative bg-gradient-to-r from-teal-600 to-teal-700 p-4 text-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
@@ -153,11 +143,9 @@ export function OfficeLocation() {
                   <span className="font-semibold">Nossa Localização</span>
                 </div>
               </div>
-              {/* Animated underline */}
               <div className="absolute bottom-0 left-0 h-1 bg-white/30 w-0 group-hover:w-full transition-all duration-500"></div>
             </div>
 
-            {/* Map Container */}
             <div className="relative h-full">
               <iframe
                 src={googleMapsEmbedUrl}
@@ -171,13 +159,11 @@ export function OfficeLocation() {
                 className="transition-all duration-500 group-hover:saturate-110 group-hover:contrast-110"
               ></iframe>
 
-              {/* Overlay for better interaction */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           </div>
         </div>
 
-        {/* Call to Action */}
         <div
           className={`text-center mt-12 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}

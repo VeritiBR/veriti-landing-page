@@ -28,7 +28,6 @@ export function Header() {
       <header className="fixed top-0 w-full bg-white backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo Section - Left */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
                 <Image
@@ -42,8 +41,6 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Navigation - Center (Desktop) */}
-            {/* Alterado de md:flex para lg:flex */}
             <nav className="hidden lg:flex items-center justify-center flex-1 mx-8">
               <div className="flex items-center space-x-8">
                 {navLinks.map((link) => (
@@ -58,14 +55,10 @@ export function Header() {
               </div>
             </nav>
 
-            {/* Actions Section - Right */}
             <div className="flex items-center space-x-4 flex-shrink-0">
-              {/* Alterado de md:inline-flex para lg:inline-flex */}
               <Button asChild className="hidden lg:inline-flex bg-teal-600 hover:bg-teal-700 font-medium">
                 <Link href="#contact">Entre em Contato</Link>
               </Button>
-              {/* Mobile Menu Button */}
-              {/* Alterado de md:hidden para lg:hidden */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -79,7 +72,6 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu & Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <>

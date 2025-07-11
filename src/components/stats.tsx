@@ -26,8 +26,8 @@ function StatCard({ icon, value, label, prefix = "+", isVisible }: StatCardProps
     const duration = 2000 // 2 seconds
 
     // Special handling for revenue (faturamento)
-    if (value >= 1000000) {
-      const increment = 10000000 // 100.000 increments
+    if (value >= 100000000) {
+      const increment = 100000000 // 100.000 increments
       const totalSteps = 10 // From 100k to 1M = 10 steps
       const stepDuration = duration / totalSteps
 
@@ -133,7 +133,7 @@ export function Stats() {
   const stats = [
     {
       icon: <DollarSign className="h-8 w-8 text-white" />,
-      value: 800000000, // 1 milhão
+      value: 800000000,
       label: "Total de faturamento sob gestão",
     },
     {

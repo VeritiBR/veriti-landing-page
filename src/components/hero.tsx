@@ -9,18 +9,16 @@ import styles from "./styles.module.css"
 export function Hero() {
   return (
     <section className="relative w-[100vw] h-[100vh] bg-[#10141D] ">
-      {/* Imagem Desktop */}
       <div className={`${styles.desktopImage} `}>
         <Image
           src="/images/banner_2.png"
           width={1920}
           height={1080}
           alt="Banner de fundo com imagem dos sócios da Veriti"
-          className="absolute top-0 left-0 w-full h-full object-fit opacity-60 aspect-[3/4]"
+          className="absolute top-0 left-0 w-full h-full object-fit opacity-70 aspect-[3/4]"
         />
       </div>
 
-      {/* Imagem Mobile */}
       <div className={`${styles.mobileImage} `}>
         <Image
           src="/images/mobile_banner_hero.png"

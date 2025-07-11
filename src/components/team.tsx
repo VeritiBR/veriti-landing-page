@@ -9,9 +9,6 @@ import Img4 from "../../public/images/FOTO_TATI.jpg"
 import Img6 from "../../public/images/fernando.jpg"
 import Img7 from "../../public/images/marlon.jpg"
 import Link from "next/link"
-
-// INTERFACE PARA MEMBRO DA EQUIPE
-// O tipo 'avatar' foi alterado para string para suportar URLs de placeholders.
 interface TeamMember {
   id: number;
   name: string;
@@ -22,8 +19,6 @@ interface TeamMember {
   role: string;
 }
 
-// DADOS DOS MEMBROS DA EQUIPE COM IMAGENS DE PLACEHOLDER
-// Substitua as URLs de 'avatar' pelos caminhos das suas imagens locais quando for usar no seu projeto.
 const teamMembers: TeamMember[] = [
   {
     id: 1,
@@ -80,16 +75,28 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-// COMPONENTE PARA FORMAS FLUTUANTES ANIMADAS NO FUNDO
 function FloatingShape({ delay = 0, duration = 20 }) {
+  const [position, setPosition] = useState<{ top: string; left: string } | null>(null);
+
+  useEffect(() => {
+    setPosition({
+      top: `${Math.random() * 80}%`,
+      left: `${Math.random() * 80}%`,
+    });
+  }, []);
+
+  if (!position) {
+    return null;
+  }
+
   return (
     <div
       className="absolute opacity-10 animate-pulse"
       style={{
         animationDelay: `${delay}s`,
         animationDuration: `${duration}s`,
-        top: `${Math.random() * 80}%`,
-        left: `${Math.random() * 80}%`,
+        top: position.top,
+        left: position.left,
       }}
     >
       <div className="w-32 h-32 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-xl animate-bounce"></div>
@@ -97,7 +104,6 @@ function FloatingShape({ delay = 0, duration = 20 }) {
   );
 }
 
-// COMPONENTE PARA O CARD DE CADA MEMBRO DA EQUIPE
 function TeamCard({ member, index, isVisible }: { member: TeamMember; index: number; isVisible: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -110,7 +116,6 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20">
-        {/* Imagem de fundo */}
         <div className="absolute inset-0">
           <Image
             src={member.avatar}
@@ -119,15 +124,12 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
           />
         </div>
 
-        {/* Overlay de gradiente */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-        {/* Overlay de hover com informações */}
         <div
           className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 transition-all duration-500 flex flex-col justify-end p-6 ${isHovered ? "opacity-100" : "opacity-0"
             }`}
         >
-          {/* Ícones flutuantes */}
           {isHovered && (
             <>
               <Award className="absolute top-4 right-4 h-6 w-6 text-teal-400 animate-bounce" />
@@ -135,14 +137,12 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
             </>
           )}
 
-          {/* Conteúdo */}
           <div className="text-center space-y-4">
             <div>
               <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
               <h4 className="text-lg font-semibold text-teal-400">{member.role}</h4>
             </div>
 
-            {/* Links de contato */}
             <div className="flex gap-3 justify-center">
               <Link
                 href={`mailto:${member.email}`}
@@ -164,7 +164,6 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
               )}
             </div>
 
-            {/* Indicador de chevron */}
             <div className="flex justify-center">
               <ChevronDown
                 className={`h-5 w-5 text-teal-400 transition-all duration-300 ${isHovered ? "rotate-180" : ""}`}
@@ -173,25 +172,21 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
           </div>
         </div>
 
-        {/* Gradiente de fundo animado */}
         <div
           className={`absolute inset-0 bg-gradient-to-r ${member.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
         ></div>
 
-        {/* Efeito de brilho no hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-blue-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
     </div>
   );
 }
 
-// COMPONENTE PRINCIPAL DA SEÇÃO DE EQUIPE  
 export function Team() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeStats, setActiveStats] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Observador de interseção para animar a entrada da seção
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -217,7 +212,6 @@ export function Team() {
     };
   }, []);
 
-  // Rotação automática das estatísticas
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStats((prev) => (prev + 1) % 3);
@@ -231,13 +225,11 @@ export function Team() {
     { icon: Lightbulb, label: "Inovação", value: "Soluções Personalizadas" },
   ];
 
-  // Separa dinamicamente os partners dos outros membros da equipe
   const partners = teamMembers.filter(member => member.role.includes("Partner"));
   const otherMembers = teamMembers.filter(member => !member.role.includes("Partner"));
 
   return (
     <section ref={sectionRef} className="py-20 relative overflow-hidden" style={{ backgroundColor: "#000721" }}>
-      {/* Elementos de fundo animados */}
       <div className="absolute inset-0">
         <FloatingShape delay={0} duration={25} />
         <FloatingShape delay={5} duration={30} />
@@ -246,7 +238,6 @@ export function Team() {
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-r from-teal-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      {/* Overlay de grade */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
@@ -258,7 +249,6 @@ export function Team() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Seção do cabeçalho */}
         <div className="text-center mb-16">
           <div
             className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -273,7 +263,6 @@ export function Team() {
             </p>
           </div>
 
-          {/* Estatísticas animadas */}
           <div className="mt-12 flex justify-center">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               {stats.map((stat, index) => (
@@ -296,18 +285,15 @@ export function Team() {
           </div>
         </div>
 
-        {/* Grade da equipe - Layout dinâmico */}
         <div className="max-w-7xl mx-auto space-y-8">
-          {/* Primeira linha - Partners */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[50%]">
               {partners.map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
               ))}
             </div>
           </div>
 
-          {/* Segunda linha - Outros membros */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {otherMembers.map((member, index) => (
               <TeamCard key={member.id} member={member} index={index + partners.length} isVisible={isVisible} />
@@ -315,7 +301,6 @@ export function Team() {
           </div>
         </div>
 
-        {/* Call to Action interativo */}
         <div
           className={`text-center mt-16 transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}

@@ -171,7 +171,6 @@ export function Plans() {
           </p>
         </div>
 
-        {/* Cards dos Planos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {plans.map((plan, index) => (
             <Card
@@ -203,7 +202,6 @@ export function Plans() {
           ))}
         </div>
 
-        {/* Tabela de Comparação Detalhada */}
         <div className="max-w-7xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-gray-50 px-8 py-6 border-b">
@@ -264,7 +262,6 @@ export function Plans() {
           </div>
         </div>
 
-        {/* Call to Action */}
         <div className="text-center mt-16">
           <p className="text-lg text-gray-600 mb-6">Não tem certeza de qual plano escolher? Fale conosco!</p>
           <Button
