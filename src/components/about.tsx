@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white overflow-hidden">
+    <section id="about" className="py-36 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
