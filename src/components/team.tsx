@@ -3,25 +3,44 @@ import { useEffect, useRef, useState } from "react"
 import { Linkedin, Mail, Award, Users, Target, Lightbulb, ChevronDown } from "lucide-react"
 import Image, { type StaticImageData } from "next/image"
 import Img1 from "../../public/images/FOTO_BLENA.jpg"
-import Img2 from "../../public/images/FOTO_DANIELA.jpg"
-import Img3 from "../../public/images/FOTO_MAUR.jpg"
-import Img4 from "../../public/images/FOTO_TATI.jpg"
-import Img6 from "../../public/images/fernando.jpg"
-import Img7 from "../../public/images/marlon.jpg"
+import Img2 from "../../public/images/FOTO_MAUR.jpg"
+import Img3 from "../../public/images/FOTO_TATI.jpg"
+import Img4 from "../../public/images/FOTO_DANIELA.jpg"
+import Img5 from "../../public/images/moises.jpg"
+import Img6 from "../../public/images/karina.jpg"
+import Img7 from "../../public/images/fernando.jpg"
+import Img8 from "../../public/images/marlon.jpg"
 import Link from "next/link"
 interface TeamMember {
-  id: number;
-  name: string;
-  email: string;
-  linkedin?: string;
-  avatar: StaticImageData;
-  color: string;
-  role: string;
+  id: number
+  name: string
+  email: string
+  linkedin?: string
+  avatar: StaticImageData
+  color: string
+  role: string
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: 1,
+    name: "Tatiane Barboza",
+    email: "Tatiane.barboza@veriti.srv.br",
+    avatar: Img3,
+    color: "from-orange-400 to-red-500",
+    role: "Coordenadora Administrativa",
+  },
+  {
+    id: 2,
+    name: "Maur Paiva",
+    email: "maur.paiva@veriti.srv.br",
+    linkedin: "https://www.linkedin.com/in/maur-paiva-2b25771b4/",
+    avatar: Img2,
+    color: "from-green-400 to-teal-500",
+    role: "Analista Contábil",
+  },
+  {
+    id: 3,
     name: "Blena Lima",
     email: "blena.lima@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/blenna/",
@@ -30,63 +49,66 @@ const teamMembers: TeamMember[] = [
     role: "Analista Fiscal",
   },
   {
-    id: 2,
-    name: "Maur Paiva",
-    email: "maur.paiva@veriti.srv.br",
-    linkedin: "https://www.linkedin.com/in/maur-paiva-2b25771b4/",
-    avatar: Img3,
-    color: "from-green-400 to-teal-500",
-    role: "Analista Contábil",
-  },
-  {
-    id: 3,
-    name: "Tatiane Barboza",
-    email: "Tatiane.barboza@veriti.srv.br",
-    avatar: Img4,
-    color: "from-orange-400 to-red-500",
-    role: "Coordenadora Administrativa",
-  },
-  {
     id: 4,
     name: "Daniela Siqueira",
     email: "daniela.siqueira@veriti.srv.br",
-    linkedin: "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
-    avatar: Img2,
+    linkedin:
+      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
+    avatar: Img4,
     color: "from-orange-400 to-red-500",
     role: "Especialista Fiscal",
   },
   {
     id: 5,
+    name: "Moisés Silva",
+    email: "moises.filho@veriti.srv.br",
+    linkedin: "https://www.linkedin.com/in/moises-filho/ ",
+    avatar: Img5,
+    color: "from-orange-400 to-red-500",
+    role: "Gerente Contábil",
+  },
+  {
+    id: 6,
+    name: "Karina Bolela",
+    email: "karina.bolela@veriti.srv.br",
+    linkedin:
+      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
+    avatar: Img6,
+    color: "from-orange-400 to-red-500",
+    role: "Assistente Contábil",
+  },
+  {
+    id: 7,
     name: "Fernando Donegá",
     email: "fernando@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/fhmdonega/",
-    avatar: Img6,
+    avatar: Img7,
     color: "from-purple-400 to-pink-500",
     role: "Partner | TAX",
   },
   {
-    id: 6,
+    id: 8,
     name: "Marlon Barboza",
     email: "marlon@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/marlon-barboza-997702112/",
-    avatar: Img7,
+    avatar: Img8,
     color: "from-purple-400 to-pink-500",
     role: "Partner",
   },
-];
+]
 
 function FloatingShape({ delay = 0, duration = 20 }) {
-  const [position, setPosition] = useState<{ top: string; left: string } | null>(null);
+  const [position, setPosition] = useState<{ top: string; left: string } | null>(null)
 
   useEffect(() => {
     setPosition({
       top: `${Math.random() * 80}%`,
       left: `${Math.random() * 80}%`,
-    });
-  }, []);
+    })
+  }, [])
 
   if (!position) {
-    return null;
+    return null
   }
 
   return (
@@ -101,11 +123,11 @@ function FloatingShape({ delay = 0, duration = 20 }) {
     >
       <div className="w-32 h-32 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-xl animate-bounce"></div>
     </div>
-  );
+  )
 }
 
 function TeamCard({ member, index, isVisible }: { member: TeamMember; index: number; isVisible: boolean }) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <div
@@ -115,12 +137,26 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={member.id === 5 || member.id === 6 ? `relative h-80  max-[800px]:h-[550px]  max-[460px]:h-[350px] rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20` : `relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20`}>
+      {/* A altura foi ajustada para ser consistente, você pode alterar se precisar */}
+      <div
+        className={`relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20`}
+      >
         <div className="absolute inset-0">
           <Image
             src={member.avatar}
             alt={member.name}
-            className={member.id === 5 || member.id === 6 ? `absolute top-0 left-0 w-full h-auto max-[1000px]:-top-16 max-[800px]:-top-18 max-[600px]:-top-20 max-[400px]:-top-14 object-top transition-all duration-500 group-hover:scale-110` : `absolute top-0 left-0 w-full h-auto object-top transition-all duration-500 group-hover:scale-110`}
+            layout="fill"
+            className={
+              member.id === 4 ? "object-cover object-top transition-all duration-500 group-hover:scale-110 brightness-[.85] contrast-110" :
+                member.id === 1
+                  ? `object-cover object-[0px_-50px] transition-all duration-500 group-hover:scale-110`
+                  : member.id === 3
+                    ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
+                    : member.id === 2 || member.id === 4 || member.id === 5 || member.id === 6
+                      ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
+                      : member.id === 6 ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
+                        : `object-cover object-top transition-all duration-500 group-hover:scale-110`
+            }
           />
         </div>
 
@@ -179,54 +215,54 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
         <div className="absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-blue-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
     </div>
-  );
+  )
 }
 
 export function Team() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [activeStats, setActiveStats] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false)
+  const [activeStats, setActiveStats] = useState(0)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setIsVisible(true)
         }
       },
       {
         threshold: 0.2,
         rootMargin: "0px 0px -100px 0px",
       },
-    );
+    )
 
-    const currentRef = sectionRef.current;
+    const currentRef = sectionRef.current
     if (currentRef) {
-      observer.observe(currentRef);
+      observer.observe(currentRef)
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef);
+        observer.unobserve(currentRef)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStats((prev) => (prev + 1) % 3);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+      setActiveStats((prev) => (prev + 1) % 3)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   const stats = [
     { icon: Users, label: "Equipe Especializada", value: "15+ Anos de Experiência" },
     { icon: Award, label: "Certificações", value: "CRC e Especializações" },
     { icon: Lightbulb, label: "Inovação", value: "Soluções Personalizadas" },
-  ];
+  ]
 
-  const partners = teamMembers.filter(member => member.role.includes("Partner"));
-  const otherMembers = teamMembers.filter(member => !member.role.includes("Partner"));
+  const partners = teamMembers.filter((member) => member.role.includes("Partner"))
+  const otherMembers = teamMembers.filter((member) => !member.role.includes("Partner"))
 
   return (
     <section ref={sectionRef} className="py-20 relative overflow-hidden" style={{ backgroundColor: "#000721" }}>
@@ -294,7 +330,8 @@ export function Team() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* ALTERAÇÃO 2: Grid corrigido de lg:grid-cols-4 para lg:grid-cols-3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherMembers.map((member, index) => (
               <TeamCard key={member.id} member={member} index={index + partners.length} isVisible={isVisible} />
             ))}
@@ -323,5 +360,5 @@ export function Team() {
         </div>
       </div>
     </section>
-  );
+  )
 }

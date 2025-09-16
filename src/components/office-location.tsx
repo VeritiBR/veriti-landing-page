@@ -8,16 +8,16 @@ import { useEffect, useRef, useState } from "react"
 const officeImages = [
   {
     id: 1,
-    src: "/images/local-1.jpg",
-    alt: "Recepção moderna do escritório VERITI",
-    title: "Recepção Moderna",
-    description: "Ambiente acolhedor e profissional",
+    src: "/images/foto_3.jpg",
+    alt: "Sala de reuniões VERITI",
+    title: "Sala de reuniões VERITI",
+    description: "Ambiente profissional e moderno onde todo o time trabalha",
   },
   {
     id: 2,
     src: "/images/local-2.jpg",
-    alt: "Sala de reuniões iluminada VERITI",
-    title: "Sala de Reuniões",
+    alt: "Prédio do escritório VERITI",
+    title: "Prédio do escritório VERITI",
     description: "Espaço ideal para encontros de negócios",
   },
 ]

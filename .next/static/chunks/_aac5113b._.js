@@ -2611,6 +2611,24 @@ const teamMembers = [
     },
     {
         id: 5,
+        name: "Moisés Silva",
+        email: "moises.filho@veriti.srv.br",
+        linkedin: "https://www.linkedin.com/in/moises-filho/ ",
+        avatar: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$FOTO_DANIELA$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$FOTO_DANIELA$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+        color: "from-orange-400 to-red-500",
+        role: "Gerente Contábil"
+    },
+    {
+        id: 6,
+        name: "Karina Bolela",
+        email: "karina.bolela@veriti.srv.br",
+        linkedin: "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
+        avatar: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$FOTO_DANIELA$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$FOTO_DANIELA$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+        color: "from-orange-400 to-red-500",
+        role: "Assistente Contábil"
+    },
+    {
+        id: 7,
         name: "Fernando Donegá",
         email: "fernando@veriti.srv.br",
         linkedin: "https://www.linkedin.com/in/fhmdonega/",
@@ -2619,7 +2637,7 @@ const teamMembers = [
         role: "Partner | TAX"
     },
     {
-        id: 6,
+        id: 8,
         name: "Marlon Barboza",
         email: "marlon@veriti.srv.br",
         linkedin: "https://www.linkedin.com/in/marlon-barboza-997702112/",
@@ -2654,12 +2672,12 @@ function FloatingShape({ delay = 0, duration = 20 }) {
             className: "w-32 h-32 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-xl animate-bounce"
         }, void 0, false, {
             fileName: "[project]/src/components/team.tsx",
-            lineNumber: 102,
+            lineNumber: 124,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/team.tsx",
-        lineNumber: 93,
+        lineNumber: 115,
         columnNumber: 5
     }, this);
 }
@@ -2686,19 +2704,19 @@ function TeamCard({ member, index, isVisible }) {
                         className: member.id === 5 || member.id === 6 ? `absolute top-0 left-0 w-full h-auto max-[1000px]:-top-16 max-[800px]:-top-18 max-[600px]:-top-20 max-[400px]:-top-14 object-top transition-all duration-500 group-hover:scale-110` : `absolute top-0 left-0 w-full h-auto object-top transition-all duration-500 group-hover:scale-110`
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 120,
+                        lineNumber: 142,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 119,
+                    lineNumber: 141,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
                 }, void 0, false, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 127,
+                    lineNumber: 149,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2710,14 +2728,14 @@ function TeamCard({ member, index, isVisible }) {
                                     className: "absolute top-4 right-4 h-6 w-6 text-teal-400 animate-bounce"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 157,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__["Target"], {
                                     className: "absolute top-4 left-4 h-5 w-5 text-blue-400 animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 158,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -2732,7 +2750,7 @@ function TeamCard({ member, index, isVisible }) {
                                             children: member.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2740,13 +2758,13 @@ function TeamCard({ member, index, isVisible }) {
                                             children: member.role
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 165,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 163,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2760,14 +2778,14 @@ function TeamCard({ member, index, isVisible }) {
                                                     className: "h-4 w-4 mr-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/team.tsx",
-                                                    lineNumber: 151,
+                                                    lineNumber: 173,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Email"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 147,
+                                            lineNumber: 169,
                                             columnNumber: 15
                                         }, this),
                                         member.linkedin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2780,20 +2798,20 @@ function TeamCard({ member, index, isVisible }) {
                                                     className: "h-4 w-4 mr-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/team.tsx",
-                                                    lineNumber: 161,
+                                                    lineNumber: 183,
                                                     columnNumber: 19
                                                 }, this),
                                                 "LinkedIn"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 155,
+                                            lineNumber: 177,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 168,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2802,49 +2820,49 @@ function TeamCard({ member, index, isVisible }) {
                                         className: `h-5 w-5 text-teal-400 transition-all duration-300 ${isHovered ? "rotate-180" : ""}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/team.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 190,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 189,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/team.tsx",
-                            lineNumber: 140,
+                            lineNumber: 162,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 129,
+                    lineNumber: 151,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: `absolute inset-0 bg-gradient-to-r ${member.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`
                 }, void 0, false, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 175,
+                    lineNumber: 197,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-blue-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 }, void 0, false, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 179,
+                    lineNumber: 201,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/team.tsx",
-            lineNumber: 118,
+            lineNumber: 140,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/team.tsx",
-        lineNumber: 111,
+        lineNumber: 133,
         columnNumber: 5
     }, this);
 }
@@ -2928,7 +2946,7 @@ function Team() {
                         duration: 25
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 234,
+                        lineNumber: 256,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FloatingShape, {
@@ -2936,7 +2954,7 @@ function Team() {
                         duration: 30
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 235,
+                        lineNumber: 257,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FloatingShape, {
@@ -2944,27 +2962,27 @@ function Team() {
                         duration: 20
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 236,
+                        lineNumber: 258,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 237,
+                        lineNumber: 259,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-r from-teal-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 238,
+                        lineNumber: 260,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/team.tsx",
-                lineNumber: 233,
+                lineNumber: 255,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2977,12 +2995,12 @@ function Team() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/team.tsx",
-                    lineNumber: 242,
+                    lineNumber: 264,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/team.tsx",
-                lineNumber: 241,
+                lineNumber: 263,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3004,13 +3022,13 @@ function Team() {
                                                 children: "Time"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/team.tsx",
-                                                lineNumber: 259,
+                                                lineNumber: 281,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/team.tsx",
-                                        lineNumber: 257,
+                                        lineNumber: 279,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3018,13 +3036,13 @@ function Team() {
                                         children: "Profissionais experientes e apaixonados por transformar a gestão das empresas com excelência e inovação."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/team.tsx",
-                                        lineNumber: 261,
+                                        lineNumber: 283,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/team.tsx",
-                                lineNumber: 253,
+                                lineNumber: 275,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3043,12 +3061,12 @@ function Team() {
                                                         className: "h-6 w-6 text-teal-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/team.tsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 298,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/team.tsx",
-                                                    lineNumber: 275,
+                                                    lineNumber: 297,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3059,7 +3077,7 @@ function Team() {
                                                             children: stat.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/team.tsx",
-                                                            lineNumber: 279,
+                                                            lineNumber: 301,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3067,35 +3085,35 @@ function Team() {
                                                             children: stat.value
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/team.tsx",
-                                                            lineNumber: 280,
+                                                            lineNumber: 302,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/team.tsx",
-                                                    lineNumber: 278,
+                                                    lineNumber: 300,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 291,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 267,
+                                    lineNumber: 289,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/team.tsx",
-                                lineNumber: 266,
+                                lineNumber: 288,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 252,
+                        lineNumber: 274,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3111,17 +3129,17 @@ function Team() {
                                             isVisible: isVisible
                                         }, member.id, false, {
                                             fileName: "[project]/src/components/team.tsx",
-                                            lineNumber: 292,
+                                            lineNumber: 314,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 290,
+                                    lineNumber: 312,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/team.tsx",
-                                lineNumber: 289,
+                                lineNumber: 311,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3132,18 +3150,18 @@ function Team() {
                                         isVisible: isVisible
                                     }, member.id, false, {
                                         fileName: "[project]/src/components/team.tsx",
-                                        lineNumber: 299,
+                                        lineNumber: 321,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/team.tsx",
-                                lineNumber: 297,
+                                lineNumber: 319,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 288,
+                        lineNumber: 310,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3159,7 +3177,7 @@ function Team() {
                                     children: "Pronto para conhecer nossa equipe pessoalmente?"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 310,
+                                    lineNumber: 332,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3167,7 +3185,7 @@ function Team() {
                                     children: "Agende uma reunião e descubra como podemos transformar a gestão da sua empresa."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 311,
+                                    lineNumber: 333,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -3178,30 +3196,30 @@ function Team() {
                                     children: "Agendar Reunião"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/team.tsx",
-                                    lineNumber: 314,
+                                    lineNumber: 336,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/team.tsx",
-                            lineNumber: 309,
+                            lineNumber: 331,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/team.tsx",
-                        lineNumber: 304,
+                        lineNumber: 326,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/team.tsx",
-                lineNumber: 251,
+                lineNumber: 273,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/team.tsx",
-        lineNumber: 232,
+        lineNumber: 254,
         columnNumber: 5
     }, this);
 }
@@ -4017,16 +4035,16 @@ var _s = __turbopack_context__.k.signature();
 const officeImages = [
     {
         id: 1,
-        src: "/images/local-1.jpg",
-        alt: "Recepção moderna do escritório VERITI",
-        title: "Recepção Moderna",
-        description: "Ambiente acolhedor e profissional"
+        src: "/images/foto_3.jpg",
+        alt: "Sala de reuniões VERITI",
+        title: "Sala de reuniões",
+        description: "Ambiente profissional e moderno onde todo o time trabalha"
     },
     {
         id: 2,
         src: "/images/local-2.jpg",
-        alt: "Sala de reuniões iluminada VERITI",
-        title: "Sala de Reuniões",
+        alt: "Prédio do escritório VERITI",
+        title: "Prédio do escritório VERITI",
         description: "Espaço ideal para encontros de negócios"
     }
 ];
