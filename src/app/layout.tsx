@@ -1,12 +1,11 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Script from "next/script"
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
-const siteUrl = "https://www.veriti.srv.br"
+const siteUrl = "https://www.veriti.srv.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,15 +25,9 @@ export const metadata: Metadata = {
     "abertura de empresa",
     "BPO financeiro",
   ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    minimumScale: 1,
-    maximumScale: 1, // Exemplo de outra propriedade
-  },
   authors: [{ name: "Filipe Pio Magalhães" }],
   other: {
-    'copyright': '© 2025 VERITI Contabilidade e Gestão Tributária',
+    copyright: "© 2025 VERITI Contabilidade e Gestão Tributária",
   },
   robots: {
     index: true,
@@ -47,10 +40,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
   openGraph: {
     title: "VERITI - Contabilidade e Gestão Tributária",
-    description: "Soluções contábeis modernas e personalizadas para sua empresa.",
+    description:
+      "Soluções contábeis modernas e personalizadas para sua empresa.",
     url: siteUrl,
     siteName: "VERITI Contabilidade",
     images: [
@@ -64,55 +57,62 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "VERITI - Contabilidade e Gestão Tributária",
-    description: "Transforme a gestão da sua empresa com soluções contábeis modernas, eficientes e personalizadas.",
+    description:
+      "Transforme a gestão da sua empresa com soluções contábeis modernas, eficientes e personalizadas.",
     images: [`${siteUrl}/og-image.png`],
   },
-
   alternates: {
     canonical: "/",
   },
-
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  verification: {
+    google: "seu-codigo-de-verificacao-do-google-search-console",
+  },
+};
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
   themeColor: "#0d9488",
-
-  // --- META DE VERIFICAÇÃO (EXEMPLO GOOGLE) ---
-  // verification: {
-  //   google: "seu-codigo-de-verificacao-do-google-search-console",
-  // },
-}
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <Script id="gtm-script" strategy="beforeInteractive">{`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-M3XLTJN6');
+        `}</Script>
+      </head>
       <body className={inter.className}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M3XLTJN6"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          ></iframe>
+        </noscript>
         {children}
-
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-6V46GYYPP6`}
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-6V46GYYPP6');
-          `}
-        </Script>
       </body>
     </html>
-  )
+  );
 }
