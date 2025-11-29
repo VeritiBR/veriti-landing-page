@@ -1,24 +1,27 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
-import { Linkedin, Mail, Award, Users, Target, Lightbulb, ChevronDown } from "lucide-react"
-import Image, { type StaticImageData } from "next/image"
-import Img1 from "../../public/images/FOTO_BLENA.jpg"
-import Img2 from "../../public/images/FOTO_MAUR.jpg"
-import Img3 from "../../public/images/FOTO_TATI.jpg"
-import Img4 from "../../public/images/FOTO_DANIELA.jpg"
-import Img5 from "../../public/images/moises.jpg"
-import Img6 from "../../public/images/karina.jpg"
-import Img7 from "../../public/images/fernando.jpg"
-import Img8 from "../../public/images/marlon.jpg"
-import Link from "next/link"
+"use client";
+import { useEffect, useRef, useState } from "react";
+import {
+  Linkedin,
+  Mail,
+  Award,
+  Users,
+  Target,
+  Lightbulb,
+  ChevronDown,
+} from "lucide-react";
+import Image, { type StaticImageData } from "next/image";
+import Img3 from "../../public/images/FOTO_TATI.jpg";
+import Img7 from "../../public/images/fernando.jpg";
+import Img8 from "../../public/images/marlon.jpg";
+import Link from "next/link";
 interface TeamMember {
-  id: number
-  name: string
-  email: string
-  linkedin?: string
-  avatar: StaticImageData
-  color: string
-  role: string
+  id: number;
+  name: string;
+  email: string;
+  linkedin?: string;
+  avatar: StaticImageData;
+  color: string;
+  role: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -32,53 +35,6 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Maur Paiva",
-    email: "maur.paiva@veriti.srv.br",
-    linkedin: "https://www.linkedin.com/in/maur-paiva-2b25771b4/",
-    avatar: Img2,
-    color: "from-green-400 to-teal-500",
-    role: "Analista Contábil",
-  },
-  {
-    id: 3,
-    name: "Blena Lima",
-    email: "blena.lima@veriti.srv.br",
-    linkedin: "https://www.linkedin.com/in/blenna/",
-    avatar: Img1,
-    color: "from-teal-400 to-blue-500",
-    role: "Analista Fiscal",
-  },
-  {
-    id: 4,
-    name: "Daniela Siqueira",
-    email: "daniela.siqueira@veriti.srv.br",
-    linkedin:
-      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
-    avatar: Img4,
-    color: "from-orange-400 to-red-500",
-    role: "Especialista Fiscal",
-  },
-  {
-    id: 5,
-    name: "Moisés Silva",
-    email: "moises.filho@veriti.srv.br",
-    linkedin: "https://www.linkedin.com/in/moises-filho/ ",
-    avatar: Img5,
-    color: "from-orange-400 to-red-500",
-    role: "Gerente Contábil",
-  },
-  {
-    id: 6,
-    name: "Karina Bolela",
-    email: "karina.bolela@veriti.srv.br",
-    linkedin:
-      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAfCak4BlobtNxn2GhQ5cGpyob7s4vHaSqw&keywords=daniela%20siqueira%20pinheiro&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=343dafdf-6f44-402f-ade5-7fba7ada8994&sid=bRF&spellCorrectionEnabled=true",
-    avatar: Img6,
-    color: "from-orange-400 to-red-500",
-    role: "Assistente Contábil",
-  },
-  {
-    id: 7,
     name: "Fernando Donegá",
     email: "fernando@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/fhmdonega/",
@@ -87,7 +43,7 @@ const teamMembers: TeamMember[] = [
     role: "Partner | TAX",
   },
   {
-    id: 8,
+    id: 3,
     name: "Marlon Barboza",
     email: "marlon@veriti.srv.br",
     linkedin: "https://www.linkedin.com/in/marlon-barboza-997702112/",
@@ -95,20 +51,23 @@ const teamMembers: TeamMember[] = [
     color: "from-purple-400 to-pink-500",
     role: "Partner",
   },
-]
+];
 
 function FloatingShape({ delay = 0, duration = 20 }) {
-  const [position, setPosition] = useState<{ top: string; left: string } | null>(null)
+  const [position, setPosition] = useState<{
+    top: string;
+    left: string;
+  } | null>(null);
 
   useEffect(() => {
     setPosition({
       top: `${Math.random() * 80}%`,
       left: `${Math.random() * 80}%`,
-    })
-  }, [])
+    });
+  }, []);
 
   if (!position) {
-    return null
+    return null;
   }
 
   return (
@@ -123,21 +82,29 @@ function FloatingShape({ delay = 0, duration = 20 }) {
     >
       <div className="w-32 h-32 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-xl animate-bounce"></div>
     </div>
-  )
+  );
 }
 
-function TeamCard({ member, index, isVisible }: { member: TeamMember; index: number; isVisible: boolean }) {
-  const [isHovered, setIsHovered] = useState(false)
+function TeamCard({
+  member,
+  index,
+  isVisible,
+}: {
+  member: TeamMember;
+  index: number;
+  isVisible: boolean;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className={`relative group cursor-pointer transition-all duration-700 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-        }`}
+      className={`relative group cursor-pointer transition-all duration-700 transform ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+      }`}
       style={{ transitionDelay: `${index * 200}ms` }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* A altura foi ajustada para ser consistente, você pode alterar se precisar */}
       <div
         className={`relative h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-teal-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/20`}
       >
@@ -147,15 +114,13 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
             alt={member.name}
             layout="fill"
             className={
-              member.id === 4 ? "object-cover object-top transition-all duration-500 group-hover:scale-110 brightness-[.85] contrast-110" :
-                member.id === 1
-                  ? `object-cover object-[0px_-50px] transition-all duration-500 group-hover:scale-110`
-                  : member.id === 3
-                    ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
-                    : member.id === 2 || member.id === 4 || member.id === 5 || member.id === 6
-                      ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
-                      : member.id === 6 ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
-                        : `object-cover object-top transition-all duration-500 group-hover:scale-110`
+              member.id === 1
+                ? `object-cover object-[0px_-0px] transition-all duration-500 group-hover:scale-110 brightness-125`
+                : member.id === 3
+                ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
+                : member.id === 2
+                ? `object-cover object-top transition-all duration-500 group-hover:scale-110`
+                : `object-cover object-top transition-all duration-500 group-hover:scale-110`
             }
           />
         </div>
@@ -163,8 +128,9 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 transition-all duration-500 flex flex-col justify-end p-6 ${isHovered ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 transition-all duration-500 flex flex-col justify-end p-6 ${
+            isHovered ? "opacity-100" : "opacity-0"
+          }`}
         >
           {isHovered && (
             <>
@@ -175,8 +141,12 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
 
           <div className="text-center space-y-4">
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-              <h4 className="text-lg font-semibold text-teal-400">{member.role}</h4>
+              <h3 className="text-xl font-bold text-white mb-1">
+                {member.name}
+              </h3>
+              <h4 className="text-lg font-semibold text-teal-400">
+                {member.role}
+              </h4>
             </div>
 
             <div className="flex gap-3 justify-center">
@@ -202,7 +172,9 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
 
             <div className="flex justify-center">
               <ChevronDown
-                className={`h-5 w-5 text-teal-400 transition-all duration-300 ${isHovered ? "rotate-180" : ""}`}
+                className={`h-5 w-5 text-teal-400 transition-all duration-300 ${
+                  isHovered ? "rotate-180" : ""
+                }`}
               />
             </div>
           </div>
@@ -215,57 +187,69 @@ function TeamCard({ member, index, isVisible }: { member: TeamMember; index: num
         <div className="absolute inset-0 bg-gradient-to-r from-teal-400/0 via-teal-400/10 to-blue-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
     </div>
-  )
+  );
 }
 
 export function Team() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeStats, setActiveStats] = useState(0)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeStats, setActiveStats] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       {
         threshold: 0.2,
         rootMargin: "0px 0px -100px 0px",
-      },
-    )
+      }
+    );
 
-    const currentRef = sectionRef.current
+    const currentRef = sectionRef.current;
     if (currentRef) {
-      observer.observe(currentRef)
+      observer.observe(currentRef);
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef)
+        observer.unobserve(currentRef);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStats((prev) => (prev + 1) % 3)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
+      setActiveStats(prev => (prev + 1) % 3);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const stats = [
-    { icon: Users, label: "Equipe Especializada", value: "15+ Anos de Experiência" },
+    {
+      icon: Users,
+      label: "Equipe Especializada",
+      value: "15+ Anos de Experiência",
+    },
     { icon: Award, label: "Certificações", value: "CRC e Especializações" },
     { icon: Lightbulb, label: "Inovação", value: "Soluções Personalizadas" },
-  ]
+  ];
 
-  const partners = teamMembers.filter((member) => member.role.includes("Partner"))
-  const otherMembers = teamMembers.filter((member) => !member.role.includes("Partner"))
+  const partners = teamMembers.filter(member =>
+    member.role.includes("Partner")
+  );
+  const otherMembers = teamMembers.filter(
+    member => !member.role.includes("Partner")
+  );
 
   return (
-    <section ref={sectionRef} className="py-20 relative overflow-hidden" style={{ backgroundColor: "#000721" }}>
+    <section
+      ref={sectionRef}
+      className="py-20 relative overflow-hidden"
+      style={{ backgroundColor: "#000721" }}
+    >
       <div className="absolute inset-0">
         <FloatingShape delay={0} duration={25} />
         <FloatingShape delay={5} duration={30} />
@@ -287,15 +271,21 @@ export function Team() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div
-            className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`transition-all duration-1000 transform ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Nosso{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Time</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+                Time
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Profissionais experientes e apaixonados por transformar a gestão das empresas com excelência e inovação.
+              Profissionais experientes e apaixonados por transformar a gestão
+              das empresas com excelência e inovação.
             </p>
           </div>
 
@@ -304,8 +294,11 @@ export function Team() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-4 transition-all duration-500 ${activeStats === index ? "opacity-100 scale-100" : "opacity-50 scale-95"
-                    }`}
+                  className={`flex items-center space-x-4 transition-all duration-500 ${
+                    activeStats === index
+                      ? "opacity-100 scale-100"
+                      : "opacity-50 scale-95"
+                  }`}
                   style={{ display: activeStats === index ? "flex" : "none" }}
                 >
                   <div className="bg-teal-500/20 p-3 rounded-full">
@@ -323,30 +316,42 @@ export function Team() {
 
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:max-w-[50%]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full lg:max-w-[90%]">
               {partners.map((member, index) => (
-                <TeamCard key={member.id} member={member} index={index} isVisible={isVisible} />
+                <TeamCard
+                  key={member.id}
+                  member={member}
+                  index={index}
+                  isVisible={isVisible}
+                />
+              ))}
+              {otherMembers.map((member, index) => (
+                <TeamCard
+                  key={member.id}
+                  member={member}
+                  index={index + partners.length}
+                  isVisible={isVisible}
+                />
               ))}
             </div>
           </div>
 
-          {/* ALTERAÇÃO 2: Grid corrigido de lg:grid-cols-4 para lg:grid-cols-3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherMembers.map((member, index) => (
-              <TeamCard key={member.id} member={member} index={index + partners.length} isVisible={isVisible} />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
 
         <div
-          className={`text-center mt-16 transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+          className={`text-center mt-16 transition-all duration-1000 transform ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
           style={{ transitionDelay: "800ms" }}
         >
           <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 backdrop-blur-sm rounded-3xl p-8 border border-teal-500/20 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Pronto para conhecer nossa equipe pessoalmente?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Pronto para conhecer nossa equipe pessoalmente?
+            </h3>
             <p className="text-gray-300 mb-6">
-              Agende uma reunião e descubra como podemos transformar a gestão da sua empresa.
+              Agende uma reunião e descubra como podemos transformar a gestão da
+              sua empresa.
             </p>
             <a
               href="https://wa.me/5516999642390"
@@ -360,5 +365,5 @@ export function Team() {
         </div>
       </div>
     </section>
-  )
+  );
 }
