@@ -1,76 +1,79 @@
-"use client"
+"use client";
 
-import { MapPin, Building, ArrowUpRight } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { MapPin, Building, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const officeImages = [
   {
     id: 1,
-    src: "/images/foto_3.jpg",
-    alt: "Sala de reuniões VERITI",
-    title: "Sala de reuniões VERITI",
-    description: "Ambiente profissional e moderno onde todo o time trabalha",
-  },
-  {
-    id: 2,
     src: "/images/local-2.jpg",
     alt: "Prédio do escritório VERITI",
     title: "Prédio do escritório VERITI",
     description: "Espaço ideal para encontros de negócios",
   },
-]
+];
 
-const officeAddress = "Av. Wladimir Meirelles Ferreira, 1660 - Jardim Botânico, Ribeirão Preto - SP, 14021-630"
+const officeAddress =
+  "Av. Wladimir Meirelles Ferreira, 1660 - Jardim Botânico, Ribeirão Preto - SP, 14021-630";
 const googleMapsEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.847551225884!2d-47.8228308850638!3d-21.23788718588528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b9a6b0c6a5a9%3A0x8f7d8c5b0c9a4e3b!2sAv.%20Wladimir%20Meirelles%20Ferreira%2C%201660%20-%20Jardim%20Botanico%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014021-630!5e0!3m2!1spt-BR!2sbr!4v1628020968953!5m2!1spt-BR!2sbr"
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.847551225884!2d-47.8228308850638!3d-21.23788718588528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b9a6b0c6a5a9%3A0x8f7d8c5b0c9a4e3b!2sAv.%20Wladimir%20Meirelles%20Ferreira%2C%201660%20-%20Jardim%20Botanico%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014021-630!5e0!3m2!1spt-BR!2sbr!4v1628020968953!5m2!1spt-BR!2sbr";
 
 export function OfficeLocation() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
+          setIsVisible(true);
+          observer.unobserve(entry.target);
         }
       },
       {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
-      },
-    )
+      }
+    );
 
-    const currentRef = sectionRef.current
+    const currentRef = sectionRef.current;
     if (currentRef) {
-      observer.observe(currentRef)
+      observer.observe(currentRef);
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef)
+        observer.unobserve(currentRef);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-    <section id="office" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section
+      id="office"
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+            className={`transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
           >
             <div className="flex items-center justify-center mb-6">
               <div className="relative flex items-center justify-center h-10 w-10">
                 <Building className="h-10 w-10 text-teal-600 relative z-10 ml-auto mr-auto" />
                 <div className="absolute inset-0 bg-teal-200 rounded-full scale-150 opacity-20 animate-pulse"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 ml-5">Nosso Escritório</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 ml-5">
+                Nosso Escritório
+              </h2>
             </div>
             <div className="space-y-2">
               <div className="flex items-center justify-center text-gray-700">
@@ -86,15 +89,23 @@ export function OfficeLocation() {
         </div>
 
         <div
-          className={`flex flex-col md:flex-row gap-8 md:h-[80vh] md:max-h-[700px] w-full transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
+          className={`flex flex-col md:flex-row gap-8 md:h-[80vh] md:max-h-[700px] w-full transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
         >
-          <div className="w-full md:w-1/2 h-[500px] md:h-full grid grid-cols-1 grid-rows-2 gap-4">
+          <div className="w-full md:w-1/2 h-[500px] md:h-full grid grid-cols-1 grid-rows-1 gap-4">
             {officeImages.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative rounded-2xl overflow-hidden shadow-lg transition-all duration-700 ease-out transform cursor-pointer ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-                  } ${hoveredImage === image.id ? "scale-105 shadow-2xl z-10" : "hover:scale-102"}`}
+                className={`group relative rounded-2xl overflow-hidden shadow-lg transition-all duration-700 ease-out transform cursor-pointer ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-10"
+                } ${
+                  hoveredImage === image.id
+                    ? "scale-105 shadow-2xl z-10"
+                    : "hover:scale-102"
+                }`}
                 style={{ transitionDelay: `${(index + 2) * 150}ms` }}
                 onMouseEnter={() => setHoveredImage(image.id)}
                 onMouseLeave={() => setHoveredImage(null)}
@@ -127,8 +138,11 @@ export function OfficeLocation() {
           </div>
 
           <div
-            className={`w-full md:w-1/2 h-[500px] md:h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transition-all duration-700 ease-out transform group ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-              } hover:scale-[1.02] hover:shadow-3xl`}
+            className={`w-full md:w-1/2 h-[500px] md:h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transition-all duration-700 ease-out transform group ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
+            } hover:scale-[1.02] hover:shadow-3xl`}
             style={{ transitionDelay: "600ms" }}
           >
             <div className="relative bg-gradient-to-r from-teal-600 to-teal-700 p-4 text-white">
@@ -158,13 +172,19 @@ export function OfficeLocation() {
         </div>
 
         <div
-          className={`text-center mt-12 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
+          className={`text-center mt-12 transition-all duration-1000 delay-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           <p className="text-lg text-gray-600 mb-4">
-            Venha nos conhecer pessoalmente e descubra como podemos ajudar sua empresa
+            Venha nos conhecer pessoalmente e descubra como podemos ajudar sua
+            empresa
           </p>
-          <Link href="https://maps.app.goo.gl/your-google-maps-link" target="_blank" className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors cursor-pointer group">
+          <Link
+            href="https://maps.app.goo.gl/your-google-maps-link"
+            target="_blank"
+            className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors cursor-pointer group"
+          >
             <MapPin className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             <span>Ver no Google Maps</span>
             <ArrowUpRight className="h-4 w-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -172,5 +192,5 @@ export function OfficeLocation() {
         </div>
       </div>
     </section>
-  )
+  );
 }
