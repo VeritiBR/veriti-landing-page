@@ -2,8 +2,13 @@
 
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation"; // 1. Importação adicionada
 import {
-  Card, CardContent, CardDescription, CardHeader, CardTitle
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,22 +31,27 @@ function formatPhone(value: string): string {
   const numeric = value.replace(/\D/g, "");
   if (numeric.length <= 2) return `(${numeric}`;
   if (numeric.length <= 7) return `(${numeric.slice(0, 2)})${numeric.slice(2)}`;
-  return `(${numeric.slice(0, 2)})${numeric.slice(2, 7)}-${numeric.slice(7, 11)}`;
+  return `(${numeric.slice(0, 2)})${numeric.slice(2, 7)}-${numeric.slice(
+    7,
+    11
+  )}`;
 }
 
 export function Contact() {
+  const router = useRouter(); // 2. Inicialização do router
+
   const {
     register,
     handleSubmit,
     reset,
     setValue,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm<FormValues>({ mode: "onChange" });
 
   const watchPhone = watch("phone") || "";
 
-  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+  const onSubmit: SubmitHandler<FormValues> = async data => {
     const loadingToastId = toast.loading("Enviando sua mensagem...");
 
     const formData = {
@@ -49,7 +59,7 @@ export function Contact() {
       phone: data.phone?.replace(/\D/g, ""),
       access_key: "cfde5134-cf33-4da6-ba4c-8c0cd24a3dbb",
       from_name: "Formulário de Contato - Veriti",
-      subject: "Novo Contato Recebido do Site"
+      subject: "Novo Contato Recebido do Site",
     };
 
     try {
@@ -57,19 +67,19 @@ export function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json"
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
       toast.dismiss(loadingToastId);
 
       if (result.success) {
-        console.log('Olá')
-        toast.success("Mensagem enviada com sucesso! Agradecemos o contato.");
+        toast.success("Mensagem enviada com sucesso!");
         reset();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // 3. Redirecionamento para a página /finalizado
+        router.push("/finalizado");
       } else {
         toast.error(`Erro ao enviar: ${result.message || "Tente novamente."}`);
       }
@@ -87,14 +97,17 @@ export function Contact() {
             Entre em Contato
           </h2>
           <p className="text-lg text-gray-600">
-            Pronto para transformar a gestão da sua empresa? Entre em contato conosco e descubra como podemos ajudar.
+            Pronto para transformar a gestão da sua empresa? Entre em contato
+            conosco e descubra como podemos ajudar.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-8xl mx-auto">
           <Card className="h-full flex flex-col">
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-900">Fale Conosco</CardTitle>
+              <CardTitle className="text-2xl text-gray-900">
+                Fale Conosco
+              </CardTitle>
               <CardDescription>Responderemos em até 24h úteis.</CardDescription>
             </CardHeader>
 
@@ -108,7 +121,11 @@ export function Contact() {
                     className="py-5 mt-2"
                     {...register("name", { required: "O nome é obrigatório" })}
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -132,11 +149,15 @@ export function Contact() {
                       required: "O email é obrigatório",
                       pattern: {
                         value: emailRegex,
-                        message: "Email inválido"
-                      }
+                        message: "Email inválido",
+                      },
                     })}
                   />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -148,11 +169,11 @@ export function Contact() {
                     placeholder="(11)99999-9999"
                     className="py-5 mt-2"
                     {...register("phone", {
-                      validate: (value) => {
+                      validate: value => {
                         if (!value) return true;
                         const clean = value.replace(/\D/g, "");
                         return clean.length === 11 || "Digite um número válido";
-                      }
+                      },
                     })}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => {
                       const formatted = formatPhone(e.target.value);
@@ -160,7 +181,11 @@ export function Contact() {
                     }}
                     value={watchPhone}
                   />
-                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.phone.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -170,12 +195,21 @@ export function Contact() {
                     placeholder="Descreva suas necessidades ou dúvidas..."
                     rows={4}
                     className="py-5 mt-2"
-                    {...register("message", { required: "A mensagem é obrigatória" })}
+                    {...register("message", {
+                      required: "A mensagem é obrigatória",
+                    })}
                   />
-                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
-                <Button type="submit" className="w-full bg-teal-600 hover:bg-teal-700 mt-2">
+                <Button
+                  type="submit"
+                  className="w-full bg-teal-600 hover:bg-teal-700 mt-2"
+                >
                   Enviar Mensagem
                 </Button>
               </CardContent>
@@ -183,36 +217,48 @@ export function Contact() {
           </Card>
 
           <div className="space-y-6">
-            {[{
-              icon: <MapPin className="h-6 w-6 text-teal-600" />,
-              title: "Endereço",
-              content: (
-                <>
-                  Av. Wladimir Meirelles Ferreira, 1660<br />
-                  Jardim Botânico, Ribeirão Preto - SP<br />
-                  CEP: 14021-630<br />
-                  <span className="font-medium">W Offices, Sala 710</span>
-                </>
-              )
-            }, {
-              icon: <Phone className="h-6 w-6 text-teal-600" />,
-              title: "Telefone",
-              content: <p>(16) 99964-2390 (WhatsApp)</p>
-            }, {
-              icon: <Mail className="h-6 w-6 text-teal-600" />,
-              title: "Email",
-              content: <p>contato@veriti.srv.br</p>
-            }, {
-              icon: <Clock className="h-6 w-6 text-teal-600" />,
-              title: "Horário de Atendimento",
-              content: <p>Segunda a Sexta: 8h às 18h</p>
-            }].map((item, idx) => (
+            {[
+              {
+                icon: <MapPin className="h-6 w-6 text-teal-600" />,
+                title: "Endereço",
+                content: (
+                  <>
+                    Av. Wladimir Meirelles Ferreira, 1660
+                    <br />
+                    Jardim Botânico, Ribeirão Preto - SP
+                    <br />
+                    CEP: 14021-630
+                    <br />
+                    <span className="font-medium">W Offices, Sala 710</span>
+                  </>
+                ),
+              },
+              {
+                icon: <Phone className="h-6 w-6 text-teal-600" />,
+                title: "Telefone",
+                content: <p>(16) 99964-2390 (WhatsApp)</p>,
+              },
+              {
+                icon: <Mail className="h-6 w-6 text-teal-600" />,
+                title: "Email",
+                content: <p>contato@veriti.srv.br</p>,
+              },
+              {
+                icon: <Clock className="h-6 w-6 text-teal-600" />,
+                title: "Horário de Atendimento",
+                content: <p>Segunda a Sexta: 8h às 18h</p>,
+              },
+            ].map((item, idx) => (
               <Card key={idx}>
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-teal-100 p-3 rounded-lg">{item.icon}</div>
+                    <div className="bg-teal-100 p-3 rounded-lg">
+                      {item.icon}
+                    </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        {item.title}
+                      </h3>
                       <div className="text-gray-600">{item.content}</div>
                     </div>
                   </div>
