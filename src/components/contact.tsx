@@ -78,7 +78,6 @@ export function Contact() {
       if (result.success) {
         toast.success("Mensagem enviada com sucesso!");
         reset();
-        // 3. Redirecionamento para a página /finalizado
         router.push("/finalizado");
       } else {
         toast.error(`Erro ao enviar: ${result.message || "Tente novamente."}`);
